@@ -7,7 +7,8 @@ namespace EventParking.DataAccess.Configurations;
 public class EventConfiguration
     : IEntityTypeConfiguration<Event>
 {
-    public void Configure(EntityTypeBuilder<Event> builder)
+    public void Configure(
+        EntityTypeBuilder<Event> builder)
     {
         builder.ToTable(
             "Events",
@@ -49,6 +50,11 @@ public class EventConfiguration
 
         builder.Property(x => x.Capacity)
             .IsRequired();
+
+        builder.Property(x => x.SeatLayoutType)
+            .IsRequired()
+            .HasMaxLength(20)
+            .HasDefaultValue("Theatre");
 
         builder.Property(x => x.StartDateTime)
             .IsRequired();
