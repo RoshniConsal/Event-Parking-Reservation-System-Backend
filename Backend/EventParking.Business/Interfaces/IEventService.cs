@@ -10,7 +10,8 @@ public interface IEventService
         int? venueId,
         int? categoryId);
 
-    Task<EventDto> GetByIdAsync(int id);
+    Task<EventDto> GetByIdAsync(
+        int id);
 
     Task<EventDto> CreateAsync(
         EventCreateDto dto);
@@ -19,5 +20,10 @@ public interface IEventService
         int id,
         EventUpdateDto dto);
 
-    Task DeleteAsync(int id);
+    Task<EventDto> UpdateSeatLayoutAsync(
+        int id,
+        UpdateSeatLayoutDto dto);
+
+    Task DeleteAsync(
+        int id);
 }

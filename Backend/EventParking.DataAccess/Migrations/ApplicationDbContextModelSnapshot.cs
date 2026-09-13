@@ -219,6 +219,13 @@ namespace EventParking.DataAccess.Migrations
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("SeatLayoutType")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)")
+                        .HasDefaultValue("Theatre");
+
                     b.Property<DateTime>("StartDateTime")
                         .HasColumnType("datetime2");
 
