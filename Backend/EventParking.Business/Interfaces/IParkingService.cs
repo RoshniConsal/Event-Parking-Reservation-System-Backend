@@ -8,15 +8,21 @@ public interface IParkingService
         int eventId,
         bool availableOnly = false);
 
-    Task<ParkingSlotDto> GetByIdAsync(int id);
+    Task<ParkingSlotDto> GetByIdAsync(
+        int id);
 
     Task<ParkingSlotDto> CreateAsync(
         int eventId,
         ParkingSlotCreateDto dto);
 
+    Task<List<ParkingSlotDto>> GenerateAsync(
+        int eventId,
+        ParkingSlotGenerateDto dto);
+
     Task<ParkingSlotDto> UpdateAsync(
         int id,
         ParkingSlotUpdateDto dto);
 
-    Task DeleteAsync(int id);
+    Task DeleteAsync(
+        int id);
 }
